@@ -122,9 +122,11 @@ class Ui_MainWindow(object):
             "The last thing",
             "<h2>We are opening your browser now, just scan QR code and rest we will do</h2>",
         )
-        driver = webdriver.Chrome()
-        driver.maximize_window()
-        driver.get("https://web.whatsapp.com")
+        System.setProperty("webdriver.chrome.driver","pathto\\chromedriver.exe");    
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("useAutomationExtension", false);
+        WebDriver driver = new ChromeDriver(options);
+        driver.get("https://web.whatsapp.com/);        
         while True:
             try:
                 search = driver.find_element_by_xpath(
